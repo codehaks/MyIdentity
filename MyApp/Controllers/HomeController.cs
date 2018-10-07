@@ -46,7 +46,14 @@ namespace MyApp.Controllers
                         });
             };
 
-            return Ok();
+            return Ok("Done");
+        }
+
+        public IActionResult Name()
+        {
+            var userName = User.Identity.Name;
+            var email = User.Identity.GetEmail();
+            return Ok(userName);
         }
     }
 }
