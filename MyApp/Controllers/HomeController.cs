@@ -10,9 +10,15 @@ namespace MyApp.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult IdentityType()
+        {
+            return Ok(User.Identity.AuthenticationType);
         }
     }
 }
