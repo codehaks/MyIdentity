@@ -28,31 +28,6 @@ namespace MyApp.Controllers
             return View();
         }
 
-        public IActionResult IdentityType()
-        {
-            return Ok(User.Identity.AuthenticationType);
-        }
-
-        public async Task<IActionResult> AddClaims()
-        {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            if (user != null)
-            {
-                await _userManager.AddClaimsAsync(user
-                        , new[] {
-                            new Claim("FirstName","Jack" ?? string.Empty),
-                            new Claim("LastName","Sparrow" ?? string.Empty),
-                            new Claim("NationalCode","555" ?? string.Empty)
-                        });
-            };
-
-            return Ok("Done");
-        }
-
-        public IActionResult Name()
-        {
-            var userName = User.Identity.Name;
-            return Ok(userName);
-        }
+      
     }
 }

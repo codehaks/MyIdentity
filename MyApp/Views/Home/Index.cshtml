@@ -11,16 +11,7 @@
 @if (User.Identity.IsAuthenticated)
 {
     <h2> Welcome @User.Identity.Name</h2>
-    @User.Identity.AuthenticationType
-    <hr />
-    @foreach (var item in User.Identities)
-    {
-        <p>@item.Name (@item.Claims.Count())</p>
-        @foreach (var claim in item.Claims)
-        {
-            <p>@claim.Type | @claim.Value | @claim.ValueType | @claim.Issuer | @claim.OriginalIssuer</p>
-        }
-    }
+
     <hr />
 }
 else {
