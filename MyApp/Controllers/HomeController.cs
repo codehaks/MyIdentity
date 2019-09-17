@@ -52,7 +52,6 @@ namespace MyApp.Controllers
         public IActionResult Name()
         {
             var userName = User.Identity.Name;
-            var email = User.Identity.GetEmail();
             return Ok(userName);
         }
     }
